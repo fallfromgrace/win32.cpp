@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "win32.cpp", "win32.cpp\win32.cpp.vcxproj", "{5B9DC32C-FC09-4250-AF5D-091124F518CC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{8F073B84-091B-4712-A0BC-6A0DF0B8883F}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "win32.cpp.test.unit", "win32.cpp.test.unit\win32.cpp.test.unit.vcxproj", "{8FF8D86C-A02B-4892-B273-F048B5DE14AD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "win32.cpp.test.console", "win32.cpp.test.console\win32.cpp.test.console.vcxproj", "{D2076372-6F14-4ECD-8923-FC20C01142C5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B9DC32C-FC09-4250-AF5D-091124F518CC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5B9DC32C-FC09-4250-AF5D-091124F518CC}.Debug|Win32.Build.0 = Debug|Win32
+		{5B9DC32C-FC09-4250-AF5D-091124F518CC}.Release|Win32.ActiveCfg = Release|Win32
+		{5B9DC32C-FC09-4250-AF5D-091124F518CC}.Release|Win32.Build.0 = Release|Win32
+		{8FF8D86C-A02B-4892-B273-F048B5DE14AD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8FF8D86C-A02B-4892-B273-F048B5DE14AD}.Debug|Win32.Build.0 = Debug|Win32
+		{8FF8D86C-A02B-4892-B273-F048B5DE14AD}.Release|Win32.ActiveCfg = Release|Win32
+		{8FF8D86C-A02B-4892-B273-F048B5DE14AD}.Release|Win32.Build.0 = Release|Win32
+		{D2076372-6F14-4ECD-8923-FC20C01142C5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D2076372-6F14-4ECD-8923-FC20C01142C5}.Debug|Win32.Build.0 = Debug|Win32
+		{D2076372-6F14-4ECD-8923-FC20C01142C5}.Release|Win32.ActiveCfg = Release|Win32
+		{D2076372-6F14-4ECD-8923-FC20C01142C5}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

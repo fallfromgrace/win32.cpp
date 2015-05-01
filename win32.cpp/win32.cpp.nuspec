@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>win32.cpp</id>
+    <version>1.0.0.106</version>
+    <title>win32.cpp</title>
+    <authors>Light</authors>
+    <owners>Light</owners>
+    <description>C++ wrapper for win32.</description>
+    <summary>C++ wrapper for win32.</summary>
+    <releaseNotes></releaseNotes>
+    <language>en-US</language>
+    <!--<projectUrl></projectUrl>-->
+    <!--<licenseUrl></licenseUrl>-->
+    <!--<iconUrl></iconUrl>-->
+    <!--<copyright></copyright>-->
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <dependencies>
+      <dependency id="stdex" version="1.0.0.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="include\**\*.hpp" target="build\native\include\" />
+    <file src="win32.cpp.targets" target="build\native\win32.cpp.targets" />
+  </files>
+</package>
