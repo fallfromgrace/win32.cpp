@@ -23,8 +23,8 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
     <None Include="win32.cpp.targets" />
     <None Include="win32.cpp.nuspec" />
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>
