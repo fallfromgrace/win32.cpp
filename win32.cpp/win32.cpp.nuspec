@@ -2,13 +2,14 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>win32.cpp</id>
-    <version>1.0.0.108</version>
+    <version>0.1.5638.24619</version>
     <title>win32.cpp</title>
     <authors>Light</authors>
     <owners>Light</owners>
     <description>C++ wrapper for win32.</description>
     <summary>C++ wrapper for win32.</summary>
-    <releaseNotes></releaseNotes>
+    <releaseNotes>
+    </releaseNotes>
     <language>en-US</language>
     <!--<projectUrl></projectUrl>-->
     <!--<licenseUrl></licenseUrl>-->
@@ -16,7 +17,7 @@
     <!--<copyright></copyright>-->
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <dependencies>
-      <dependency id="more.cpp" version="1.0.0.107" />
+      <dependency id="more.cpp" version="0.1" />
     </dependencies>
   </metadata>
   <files>

@@ -25,6 +25,7 @@
   <ItemGroup>
     <None Include="win32.cpp.targets" />
     <None Include="win32.cpp.nuspec" />
+    <None Include="update_nuspec.ps1" />
     <None Include="packages.config" />
   </ItemGroup>
 </Project>
