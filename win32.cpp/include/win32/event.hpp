@@ -1,13 +1,12 @@
 #pragma once
 
-#include <memory>
-
+#include <chrono>
 #include <Windows.h>
 
 #include "includes.hpp"
-#include "logging\logging.hpp"
+//#include "logging\logging.hpp"
 
-#include "exception.hpp"
+#include "win32\error.hpp"
 
 namespace win32
 {
@@ -65,12 +64,12 @@ namespace win32
 				{
 					this->close();
 				}
-				catch (const std::exception& ex)
+				catch (const std::exception&/* ex*/)
 				{
-					log_error(
-						"::CloseHandle(%i) failed in ~event(): %s",
-						this->event_handle,
-						ex.what());
+					//log_error(
+					//	"::CloseHandle(%i) failed in ~event(): %s",
+					//	this->event_handle,
+					//	ex.what());
 				}
 			}
 
@@ -83,37 +82,37 @@ namespace win32
 
 				BOOL result = ::CloseHandle(this->event_handle);
 				this->event_handle = nullptr;
-				check_result(result);
+				event::check_result(result);
 			}
 
 			// 
 			void set() const
 			{
 				BOOL result = ::SetEvent(this->event_handle);
-				check_result(result);
+				event::check_result(result);
 			}
 
 			// 
 			void reset() const
 			{
 				BOOL result = ::ResetEvent(this->event_handle);
-				check_result(result);
+				event::check_result(result);
 			}
 
 			// 
 			void wait_one() const
 			{
 				DWORD result = ::WaitForSingleObject(this->event_handle, INFINITE);
-				check_result(result);
+				event::check_result(result);
 			}
 
 			// 
-			void wait_one(const std::chrono::milliseconds& timeout) const
+			void wait_one(std::chrono::milliseconds timeout) const
 			{
 				DWORD result = ::WaitForSingleObject(
 					this->event_handle,
 					static_cast<DWORD>(timeout.count()));
-				check_result(result);
+				event::check_result(result);
 			}
 
 			// 
@@ -126,14 +125,14 @@ namespace win32
 			static inline void check_result(BOOL result)
 			{
 				if (result == FALSE)
-					throw get_last_win32_exception();
+					throw get_last_error();
 			}
 
 			// 
 			static inline void check_result(HANDLE result)
 			{
 				if (result == nullptr)
-					throw get_last_win32_exception();
+					throw get_last_error();
 			}
 
 			// 
@@ -144,7 +143,7 @@ namespace win32
 				case WAIT_OBJECT_0: break;
 				case WAIT_ABANDONED: break;
 				case WAIT_TIMEOUT: break;
-				case WAIT_FAILED: throw win32::get_last_win32_exception();
+				case WAIT_FAILED: throw get_last_error();
 				default: break;
 				}
 			}
@@ -158,13 +157,6 @@ namespace win32
 
 	// 
 	typedef detail::event<true> manual_reset_event;
-
-	typedef std::shared_ptr<manual_reset_event> manual_reset_event_ptr;
-
-	manual_reset_event_ptr make_manual_reset_event_ptr()
-	{
-		return std::make_shared<manual_reset_event>();
-	}
 
 	//namespace detail
 	//{

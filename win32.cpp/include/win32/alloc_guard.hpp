@@ -29,7 +29,7 @@ namespace win32
 		local_alloc_guard(local_alloc_guard&& other) : 
 			resource(other.resource)
 		{
-			other.resource == nullptr;
+			other.resource = nullptr;
 		}
 
 		// 
@@ -37,7 +37,7 @@ namespace win32
 		{
 			this->release();
 			this->resource = other.resource;
-			other.resource == nullptr;
+			other.resource = nullptr;
 			return *this;
 		}
 
@@ -92,7 +92,7 @@ namespace win32
 		global_alloc_guard(global_alloc_guard&& other) :
 			resource(other.resource)
 		{
-			other.resource == nullptr;
+			other.resource = nullptr;
 		}
 
 		// 
@@ -100,7 +100,7 @@ namespace win32
 		{
 			this->release();
 			this->resource = other.resource;
-			other.resource == nullptr;
+			other.resource = nullptr;
 			return *this;
 		}
 

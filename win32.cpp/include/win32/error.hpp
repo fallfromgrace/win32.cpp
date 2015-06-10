@@ -2,18 +2,18 @@
 
 #include <stdexcept>
 #include <string>
-
 #include <Windows.h>
-#include "win32\alloc_guard.hpp"
 
 #include "includes.hpp"
+
+#include "win32\alloc_guard.hpp"
 
 namespace win32
 {
 	namespace detail
 	{
 		// Converts an error into an error message.
-		std::string get_message(DWORD error_code)
+		static std::string get_message(DWORD error_code)
 		{
 			LPSTR buffer = nullptr;
 			// Suppress warning because FormatMessage allocates the buffer, but code analysis does not 
@@ -54,17 +54,22 @@ namespace win32
 
 		}
 
+		//~win32_error()
+		//{
+		//	::SetLastError(NO_ERROR);
+		//}
+
 		// 
 		DWORD code() const
 		{
 			return this->error_code;
 		}
 	private:
-		DWORD error_code;
+		const DWORD error_code;
 	};
 
 	// 
-	win32_error get_last_error()
+	static win32_error get_last_error()
 	{
 		return win32_error(::GetLastError());
 	}

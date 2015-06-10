@@ -10,7 +10,7 @@ namespace more
 		class stopwatch
 		{
 		public:
-			typedef typename high_resolution_clock::duration duration;
+			typedef high_resolution_clock::duration duration;
 
 			// 
 			stopwatch() :
