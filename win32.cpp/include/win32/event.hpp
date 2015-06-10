@@ -7,7 +7,7 @@
 #include "includes.hpp"
 #include "logging\logging.hpp"
 
-#include "win32_exception.hpp"
+#include "exception.hpp"
 
 namespace win32
 {
