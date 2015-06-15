@@ -1,6 +1,6 @@
 #include "CppUnitTest.h"
 
-#include "chrono\stopwatch.hpp"
+#include "win32\stopwatch.hpp"
 #include <thread>
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
@@ -17,7 +17,7 @@ namespace win32
 			auto duration_max = duration + std::chrono::milliseconds(16);
 			auto duration_min = duration - std::chrono::milliseconds(16);
 
-			more::chrono::stopwatch sw;
+			win32::stopwatch sw;
 			sw.start();
 			std::this_thread::sleep_for(std::chrono::milliseconds(150));
 			sw.stop();
@@ -30,7 +30,7 @@ namespace win32
 			auto duration = std::chrono::milliseconds(150);
 			auto duration_required = std::chrono::milliseconds(0);
 
-			more::chrono::stopwatch sw;
+			win32::stopwatch sw;
 			sw.start();
 			std::this_thread::sleep_for(duration);
 			sw.stop();
@@ -45,7 +45,7 @@ namespace win32
 			auto duration_max = duration + std::chrono::milliseconds(16);
 			auto duration_min = duration - std::chrono::milliseconds(16);
 
-			more::chrono::stopwatch sw;
+			win32::stopwatch sw;
 			sw.start();
 			std::this_thread::sleep_for(duration);
 			sw.stop();

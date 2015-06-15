@@ -4,7 +4,7 @@
 #include <string>
 #include <Windows.h>
 
-#include "includes.hpp"
+#include "more\includes.hpp"
 
 #include "win32\alloc_guard.hpp"
 
@@ -26,7 +26,7 @@ namespace win32
 				nullptr,
 				error_code,
 				MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
-				buffer,
+				reinterpret_cast<LPSTR>(&buffer),
 				0,
 				nullptr);
 
@@ -37,7 +37,7 @@ namespace win32
 			}
 			else
 			{
-				return std::string("Unknown Error, ::FormatMessageA failed.");
+				return std::string("::FormatMessageA failed.");
 			}
 		}
 	}

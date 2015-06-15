@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\chrono\high_resolution_clock.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\win32\event.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -27,7 +24,13 @@
     <ClInclude Include="include\win32\alloc_guard.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\chrono\stopwatch.hpp">
+    <ClInclude Include="include\win32\event_observable.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\win32\high_resolution_clock.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\win32\stopwatch.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

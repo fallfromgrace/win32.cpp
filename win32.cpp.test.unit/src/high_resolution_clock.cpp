@@ -1,6 +1,6 @@
 #include "CppUnitTest.h"
 
-#include "chrono\high_resolution_clock.hpp"
+#include "win32\high_resolution_clock.hpp"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -12,7 +12,7 @@ namespace win32
 
 		TEST_METHOD(now)
 		{
-			auto time = more::chrono::high_resolution_clock::now();
+			auto time = high_resolution_clock::now();
 			Assert::IsTrue(time.time_since_epoch().count() > 0);
 		}
 
